@@ -1,0 +1,279 @@
+#crosspromo-vertical-container{
+	position: absolute;
+	width: 0px;
+	height: 100%;
+	top: 0px;
+	background-color: rgba(0,0,0,0.85);
+	font-family: Arial, Verdana;
+	right: 0px;
+	display: none;
+	z-index: 99;
+	transition: width .2s;
+	-webkit-transition: width .2s;
+}
+
+.crosspromo-visible #crosspromo-vertical-container{
+	display: block;
+}
+
+.crosspromo-loading #crosspromo-vertical-container{
+	display: none !important;
+}
+
+.crosspromo-opened #crosspromo-vertical-container{
+	right: 0px;
+	width: 250px;
+}
+
+.crosspromo-adjusting #crosspromo-vertical-container{
+	visibility: hidden;
+}
+
+.crosspromo-adjusting #crosspromo-vertical-tab{
+	visibility: hidden;
+}
+
+#crosspromo-vertical-tab{
+	width: 30px;
+	height: 100px;
+	position: absolute;
+	left: -30px;
+	top: 40%;
+	cursor: pointer;
+	
+	background-image: url("vertical-tab.png");
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: right center;
+	
+	opacity: .6;
+	
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+.crosspromo-opened #crosspromo-vertical-tab{
+	opacity: .85;
+}
+
+#crosspromo-vertical-menu{
+	height: 100%;
+	overflow: hidden;
+	width: 0px;
+	transition: width .2s;
+	-webkit-transition: width .2s;
+}
+
+.crosspromo-opened #crosspromo-vertical-menu{
+	width: 250px;
+}
+
+#crosspromo-vertical-menu-wrapper{
+	padding-top: 15px;
+	padding-bottom: 100px;
+	width: 250px;
+}
+
+.crosspromo-vertical-item{
+	clear: both;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.crosspromo-vertical-title{
+	color: #2798c7;
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: normal;
+	font-size: 0.7em;
+	margin-top: 10px;
+}
+
+.crosspromo-vertical-game-icon{
+	width: 60px;
+	height: 60px;
+	margin: auto;
+	display: block;
+	border-radius: 10px;
+	float: left;
+	margin-bottom: 10px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.crosspromo-vertical-game-title{
+	color: white;
+	font-size: 0.8em;
+	font-weight: normal;
+	margin: 0px;
+	margin-top: 5px;
+}
+
+.crosspromo-vertical-game-description{
+	color: #858585;
+	font-size: 0.7em;
+	padding-left: 10px;
+	padding-right: 10px;
+	text-align: justify;
+	margin: 0px;
+	line-height: 95%;
+}
+
+.crosspromo-vertical-game-url{
+	color: white;
+	font-size: 0.6em;
+	display: block;
+	text-align: center;
+	margin-top: 5px;
+}
+
+/* Buttons */
+.crosspromo-vertical-buttons-container{
+	margin-top: 10px;
+	margin-bottom: 10px;
+	text-align: center;
+}
+
+.crosspromo-vertical-button-try,.crosspromo-vertical-button-download,.crosspromo-vertical-button-download-long,.crosspromo-vertical-button-try-long,.crosspromo-vertical-button-play-long{
+	width: 80px;
+	height: 25px;
+	display: inline-block;
+	cursor: pointer;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.crosspromo-vertical-button-download-long,.crosspromo-vertical-button-try-long,.crosspromo-vertical-button-play-long{
+	width: 160px;
+}
+
+.crosspromo-vertical-button-download-long{
+	background-image: url("button-download-long.png");
+}
+
+.crosspromo-vertical-button-try-long{
+	background-image: url("button-try-long.png");
+}
+
+.crosspromo-vertical-button-play-long{
+	background-image: url("button-play-long.png");
+}
+
+.crosspromo-vertical-button-try{
+	background-image: url("button-try.png");
+}
+
+.crosspromo-vertical-button-download{
+	background-image: url("button-download.png");
+}
+
+.crosspromo-vertical-button-disabled{
+	opacity: .3;
+}
+
+.crosspromo-vertical-separator{
+	border: none;
+	border-top: 1px solid #595959;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	clear: both;
+}
+
+#crosspromo-shadow{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	display: none;
+	z-index: 98;
+}
+
+.crosspromo-opened #crosspromo-shadow{
+	display: block;
+}
+
+@keyframes bounce-container{
+    0%{
+        width: 0px;
+    }
+    100%{
+        width: 15px;
+    }
+}
+
+@-webkit-keyframes bounce-container{
+    0%{
+        width: 0px;
+    }
+    100%{
+        width: 15px;
+    }
+}
+
+.crosspromo-vertical-bouncing #crosspromo-vertical-container{
+    animation: bounce-container .3s 4 linear alternate;
+    -webkit-animation: bounce-container .3s 4 linear alternate;
+}
+
+.crosspromo-loading-modal{
+	position: absolute;
+	z-index: 99;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.8);
+	display: table;
+}
+
+.crosspromo-loading-inner{
+	display: table-cell;
+	vertical-align: middle;
+	width: 100%;
+	height: 100%;
+}
+
+.crosspromo-loading-message{
+	color: white;
+	text-align: center;
+	font-family: Arial;
+}
+
+.crosspromo-loading-icon{
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: contain;
+	background-image: url("icon-loading.png");
+	animation: loadingIcon infinite steps(12, end) 1s;
+	-webkit-animation: loadingIcon infinite steps(12, end) 1s;
+	-moz-animation: loadingIcon infinite steps(12, end) 1s;
+	-ms-animation: loadingIcon infinite steps(12, end) 1s;
+	position: relative;
+	top: -5px;
+	width: 50px;
+	height: 50px;
+	margin: auto;
+	margin-top: 15px;
+}
+
+@keyframes loadingIcon{
+	0%{transform: rotate(0deg);}
+	100%{transform: rotate(-360deg);}
+} 
+
+@-moz-keyframes loadingIcon{
+	0%{-moz-transform: rotate(0deg);}
+	100%{-moz-transform: rotate(-360deg);}
+}
+
+@-ms-keyframes loadingIcon{
+	0%{-ms-transform: rotate(0deg);}
+	100%{-ms-transform: rotate(-360deg);}
+} 
+
+
+@-webkit-keyframes loadingIcon{
+	0%{-webkit-transform: rotate(0deg);}
+	100%{-webkit-transform: rotate(-360deg);}
+} 
